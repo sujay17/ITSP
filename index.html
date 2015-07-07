@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>  FAST_MEDIX </title>
+  
+  <h1 align="center" style="color:black">FAST_MEDIX</h1> 
+  </head>
+   
+  <head>
+    <meta charset="UTF-8">
+
+
+    <title>Login</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css2/style.css">
+
+    
+    
+    
+      </head>
+      </html>
+
+
+    <html lang="en-US">
+  <head>
+  
+
+    <meta charset="utf-8">
+
+    <title>Login Fast_Medix</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    
+
+
+  </head>
+
+  <body>
+   
+
+    <div class="container">
+
+      <div id="login">
+
+        
+           <form action="password_verify.php" method="post">
+
+          <fieldset class="clearfix">
+
+            <p><span class="fontawesome-user"></span><input type="text" value="username" name="username" onBlur="if(this.value == '') this.value = 'username'" onFocus="if(this.value == 'username') this.value = ''" required></p> 
+            <p><span class="fontawesome-lock"></span><input type="password"  value="password" name="password" onBlur="if(this.value == '') this.value = 'password'" onFocus="if(this.value == 'password') this.value = ''" required></p> 
+            <p><input type="submit" value="Sign In"></p>
+            
+
+
+          </fieldset>
+            </form>
+        </form>
+        <p> 
+
+        <p>
+        <font color="red"><b>
+          Not a member? 
+            </b></font><a href="Signupform.html">Sign up now</a><span class="fontawesome-arrow-right"></span></p>
+
+      </div> 
+
+    </div>
+    </form>
+<head>
+<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+</head>
+    <script type="text/javascript">
+  function signinCallback(authResult) {
+  if (authResult['status']['signed_in']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    window.location="googleform.html";
+  } else {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+</script>
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="338687873643-rvdvfcfo803jvqj79t9jf5p01bl5itka.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schema.org/AddAction"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+
+  </body>
+</html>
+    
+    
+    
+    

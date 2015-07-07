@@ -1,0 +1,304 @@
+<?php session_start(); ?>
+<html>
+<body>
+<head>
+<style type="text/css">
+h1  
+{
+	text-align: center; 
+	text-decoration: underline; 
+}
+ 
+#photo
+{
+	position: absolute; 
+	left: 20px ;
+	top: 30 px ; 
+}
+.pos_right
+{
+	position: relative; 
+	left: 350px;
+	bottom: 25px;
+	line-height: 150%;
+	color: white ;
+}
+#name
+{
+	position: relative;
+	left: 25px ;
+	top:250px;
+	color: white ;
+} 
+#table1
+{
+	position: relative; 
+	top: 10px ;
+	margin-left: 10px ;
+	border-style: solid ; 
+	border-color: red ;
+}
+body
+{
+	background-color: #ADD8E6;
+}
+#left
+{
+	//position: relative; 
+	//right: 10px ;
+	color: white ;
+	
+}
+#left_1
+{
+	//position: relative;
+	//right: 20px;
+    color: white;
+
+}
+#left_2
+{
+	//position: relative; 
+	//right: 30px ;
+	color: white ;
+}
+#tab1
+{
+	position: relative;
+	left: 30px;
+	top: 20px;
+}
+
+.zoom
+{
+	zoom:150%;
+}
+
+#tab2
+{
+	position: relative;
+	left: 360px ;
+	top: -1px;
+}
+
+#tab3
+{
+	position: relative;
+	left: 650px ;
+	top: -21px;
+}
+
+#table2
+{
+	position: relative;
+	bottom: 275px ;
+	left: 700px ;
+	border-style: solid ; 
+	border-color: red ;
+}
+
+#prescrip
+{
+	position: absolute;
+	left: 680px;
+	color: white;
+	top: 300px;
+}
+
+
+
+
+</style>
+</head>
+
+<h1> Fast_medix </h1> 
+<?php
+
+require_once "config.php";
+
+$user=$_SESSION['logged_in_user'];
+
+$sql= "SELECT * FROM patient WHERE username='$user'";
+$row=$conn->query($sql);
+foreach($row as $single){
+	
+	
+	echo "date of birth:".$single['birthday']."</br>";
+	echo "contact number:".$single['contact']."</br>";
+	echo "emergency contact:".$single['emer_contact']."</br>";
+	echo "history:".$single['history']."</br>";
+	echo "allergy:".$single['allergy']."</br>"."</br>"."</br>"."</br>";
+?>
+
+<img id="photo" src="techfest.png" alt="Mountain View" style="width:304px;height:228px"> </img>
+<p id="name"> Vaccination Details : </p> 
+<p class="pos_right"> Name : <?php echo $single['name']?></p>
+<p class="pos_right"> Date of birth: <?php echo $single['birthday']?></p>
+<p class="pos_right"> Height : <?php echo $single['height']?></p>
+<p class="pos_right"> Weight : <?php echo $single['weight']?></p>
+<p class="pos_right"> Previous Operative History: <?php echo $single['history']?></p>
+<p class="pos_right"> Allergy : <?php echo $single['allergy']?></p>
+
+<div>
+<td>
+<table border ="4" style="width:50%" id="table1">
+ 
+<tr>
+<td align="center" id="left"><b>No.</b></td>
+<td align="center" id="left_1"><b>Vaccination</b></td>
+<td align="center" id="left_1"><b>Y OR N </b></td>
+<td align="center" id="left_2"><b>Date Taken  </b></td>
+<td align="center" id="left_2"><b>Booster Dose </b></td>
+</tr>
+ 
+<tr>
+<td>1</td>
+<td>Polio</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Measles </td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+</tr>
+ 
+
+ <tr>
+<td>3</td>
+<td>SmallPox</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</tr>
+ 
+
+ <tr>
+<td>4</td>
+<td>Rabies</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>BCG</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Tetanus</td>
+<td>
+<p> Yes or no </p>
+</td>
+</select>
+<td>Date</td>
+<td>
+<p> Yes or no </p>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+</td>
+</div>
+
+<div id="tab1" class="zoom">
+<tr>
+<td colspan="4" align="center"> Prescription 
+<input type="submit" 
+          name="submit" value="Submit">
+</td>
+</tr>
+</form>
+</div>
+
+<div id="tab2" class="zoom" >
+<tr>
+<td colspan="4" align="center"> Diet
+<input type="submit" 
+          name="submit" value="Submit">
+</td>
+</tr>
+</form>
+</div>
+
+
+<div id="tab3" class="zoom">
+<tr>
+<td colspan="4" align="center"> Settings
+<input type="submit" 
+          name="submit" value="Submit">
+</td>
+</tr>
+</form>
+</div>
+
+<div>
+<td>
+<table border ="4" style="width:45%" id="table2" style="height:500px">
+ 
+<tr>
+<td align="center" id="left" colspan="100%"><b>Date</b></td>
+</tr>
+<tr>
+<td height="150" colspan="100%"> Details </td>
+</tr>
+ <tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</table>
+</td>
+</div>
+
+<p id="prescrip"> Last Prescription :</p>
+
+
+
+
+</body>
+
+</html>
